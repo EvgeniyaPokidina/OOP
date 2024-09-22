@@ -9,7 +9,7 @@ namespace Lesson_3
 {
     internal class PaidParking
     {
-        private int currentFill;//текущее кол-во машин на стоянке
+        private int currentFill;
         public int CurrentFill
         {
             get { return currentFill; }
@@ -35,25 +35,32 @@ namespace Lesson_3
                 else throw new Exception("Введите верное количество мест");
             }
         }
-         public void ArriveAuto(int arrive)
+        private int waitingAuto; 
+        public int WaitingAuto
         {
-            if (CurrentFill >= ParkingPlace) throw new Exception("Парковка заполнена.");
-            //CurrentFill++; // Увеличиваем текущее количество машин на парковке
-            if (currentFill + arrive <= parkingPlace) currentFill += arrive;
+            get { return waitingAuto; }
+            set { waitingAuto = value; }
+        }
+
+        public void ArriveAuto(int arrive)
+        {
+            if (CurrentFill >= ParkingPlace)
+            {
+                waitingAuto += arrive; 
+                Console.WriteLine($"Нет мест! {arrive} автомобилей добавлены в ожидание.");
+                return;
+            }
+            if (CurrentFill + arrive <= parkingPlace) currentFill += arrive;
         }
         public void RunAwayAuto(int auto)
         {
             if (auto < 0) throw new Exception("количество уехавших машин не может быть меньше нуля");
-                       else currentFill -= auto;
+                        currentFill -= auto;
         }
-
-        //public int Print()
-        //{
-        //    return currentFill;
-        //}
         public void Print()
         {
-            Console.WriteLine($"Текущее количество мест на парковке: {CurrentFill}. Количество свободных мест: {ParkingPlace-currentFill}");
+            Console.WriteLine($"Текущее количество мест на парковке: {CurrentFill}. Количество свободных мест: {ParkingPlace-currentFill}. " +
+                $"Количество ожидающих авто {WaitingAuto}");
         }
     }
 }
