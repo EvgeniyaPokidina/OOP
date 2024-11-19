@@ -1,16 +1,16 @@
-﻿namespace Lesson_25._1
+﻿namespace Lesson_17
 {
     partial class FormAuthorization
     {
         /// <summary>
-        /// Обязательная переменная конструктора.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Освободить все используемые ресурсы.
+        /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,80 +20,78 @@
             base.Dispose(disposing);
         }
 
-        #region Код, автоматически созданный конструктором форм Windows
+        #region Windows Form Designer generated code
 
         /// <summary>
-        /// Требуемый метод для поддержки конструктора — не изменяйте 
-        /// содержимое этого метода с помощью редактора кода.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBoxLogin = new System.Windows.Forms.TextBox();
-            this.textBoxPassword = new System.Windows.Forms.TextBox();
-            this.linkLabelRegistration = new System.Windows.Forms.LinkLabel();
-            this.buttonEnter = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-            // 
-            // textBoxLogin
-            // 
-            this.textBoxLogin.Location = new System.Drawing.Point(13, 25);
-            this.textBoxLogin.Name = "textBoxLogin";
-            this.textBoxLogin.Size = new System.Drawing.Size(321, 20);
-            this.textBoxLogin.TabIndex = 0;
-            this.textBoxLogin.Text = "Введите ваш логин";
-            // 
-            // textBoxPassword
-            // 
-            this.textBoxPassword.Location = new System.Drawing.Point(13, 64);
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.PasswordChar = '*';
-            this.textBoxPassword.Size = new System.Drawing.Size(321, 20);
-            this.textBoxPassword.TabIndex = 1;
-            this.textBoxPassword.Text = "Введите пароль";
-            // 
-            // linkLabelRegistration
-            // 
-            this.linkLabelRegistration.AutoSize = true;
-            this.linkLabelRegistration.Location = new System.Drawing.Point(244, 105);
-            this.linkLabelRegistration.Name = "linkLabelRegistration";
-            this.linkLabelRegistration.Size = new System.Drawing.Size(113, 13);
-            this.linkLabelRegistration.TabIndex = 2;
-            this.linkLabelRegistration.TabStop = true;
-            this.linkLabelRegistration.Text = "Зарегистрироваться";
+            buttonEnter = new Button();
+            textBoxLogin = new TextBox();
+            textBoxPassword = new TextBox();
+            linkLabelRegistration = new LinkLabel();
+            SuspendLayout();
             // 
             // buttonEnter
             // 
-            this.buttonEnter.Location = new System.Drawing.Point(100, 133);
-            this.buttonEnter.Name = "buttonEnter";
-            this.buttonEnter.Size = new System.Drawing.Size(123, 40);
-            this.buttonEnter.TabIndex = 3;
-            this.buttonEnter.Tag = "OK";
-            this.buttonEnter.Text = "button1";
-            this.buttonEnter.UseVisualStyleBackColor = true;
+            buttonEnter.Location = new Point(128, 163);
+            buttonEnter.Name = "buttonEnter";
+            buttonEnter.Size = new Size(75, 23);
+            buttonEnter.TabIndex = 0;
+            buttonEnter.Text = "OK";
+            buttonEnter.UseVisualStyleBackColor = true;
+            buttonEnter.Click += buttonEnter_Click;
+            // 
+            // textBoxLogin
+            // 
+            textBoxLogin.Location = new Point(45, 35);
+            textBoxLogin.Name = "textBoxLogin";
+            textBoxLogin.PlaceholderText = "Введите логин";
+            textBoxLogin.Size = new Size(285, 23);
+            textBoxLogin.TabIndex = 1;
+            // 
+            // textBoxPassword
+            // 
+            textBoxPassword.Location = new Point(48, 81);
+            textBoxPassword.Name = "textBoxPassword";
+            textBoxPassword.PasswordChar = '*';
+            textBoxPassword.PlaceholderText = "Введите пароль";
+            textBoxPassword.Size = new Size(282, 23);
+            textBoxPassword.TabIndex = 2;
+            // 
+            // linkLabelRegistration
+            // 
+            linkLabelRegistration.AutoSize = true;
+            linkLabelRegistration.Location = new Point(53, 117);
+            linkLabelRegistration.Name = "linkLabelRegistration";
+            linkLabelRegistration.Size = new Size(119, 15);
+            linkLabelRegistration.TabIndex = 3;
+            linkLabelRegistration.TabStop = true;
+            linkLabelRegistration.Text = "Зарегистрироавться";
+            linkLabelRegistration.LinkClicked += linkLabelRegistration_LinkClicked;
             // 
             // FormAuthorization
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(372, 204);
-            this.Controls.Add(this.buttonEnter);
-            this.Controls.Add(this.linkLabelRegistration);
-            this.Controls.Add(this.textBoxPassword);
-            this.Controls.Add(this.textBoxLogin);
-            this.Name = "FormAuthorization";
-            this.Text = "FormAuthorization";
-            this.Load += new System.EventHandler(this.FormAuthorization_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(366, 230);
+            Controls.Add(linkLabelRegistration);
+            Controls.Add(textBoxPassword);
+            Controls.Add(textBoxLogin);
+            Controls.Add(buttonEnter);
+            Name = "FormAuthorization";
+            Text = "FormAuthorization";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBoxLogin;
-        private System.Windows.Forms.TextBox textBoxPassword;
-        private System.Windows.Forms.LinkLabel linkLabelRegistration;
-        private System.Windows.Forms.Button buttonEnter;
+        private Button buttonEnter;
+        private TextBox textBoxLogin;
+        private TextBox textBoxPassword;
+        private LinkLabel linkLabelRegistration;
     }
 }
-
