@@ -12,6 +12,7 @@ var writeToFileTask = Task.Run(() => WriteToFile("“Каждый день на 
     "нота наполняли воздух магией и вдохновением."));
 writeToFileTask.Wait();
 Console.WriteLine("Запись в файл произведена");
+
 int Sum(int a, int b) => a + b;
 void Print()
 {
