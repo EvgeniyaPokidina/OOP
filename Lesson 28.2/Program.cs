@@ -3,7 +3,7 @@ using OfficeOpenXml.Style;
 using System.Drawing;
 
 FileInfo fileInfo = new FileInfo("Календарь 2024.xlsx");
-if (!fileInfo.Exists) fileInfo.Create();
+//if (!fileInfo.Exists) fileInfo.Create();
 ExcelPackage.LicenseContext=OfficeOpenXml.LicenseContext.NonCommercial;
 ExcelPackage package = new ExcelPackage("Календарь 2024.xlsx");
 package.Workbook.Worksheets.Add("Календарь 2024");
@@ -45,4 +45,5 @@ for(DateTime i =start;i<finish; i.AddDays(1))
     previousMonth = currentMonth;
     i = i.AddDays(1);
 }
-package.Save();
+//package.Save();
+package.SaveAs(fileInfo);
